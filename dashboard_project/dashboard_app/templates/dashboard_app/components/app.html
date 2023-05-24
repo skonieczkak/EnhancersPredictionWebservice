@@ -1,0 +1,45 @@
+<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-tab-1">
+    <h1>Results</h1>
+    <form method="post" action="{% url 'handle_form_submission' %}">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="form-group">
+            <label for="chrSelect">Chromosome:</label>
+            <select class="form-control" id="chrSelect" name="selected_chr">
+              {% for chr in chromosomes %}
+              <option value="{{ chr }}">{{ chr }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="form-group">
+            <label for="rowSelectStart">Start:</label>
+            <input class="form-control" type="number" id="rowSelectStart" name="selected_row_start" min="0" max="{{row_length}}" step="1" value="0">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="form-group">
+            <label for="rowSelectEnd">End:</label>
+            <input class="form-control" type="number" id="rowSelectEnd" name="selected_row_end" min="0" max="{{row_length}}" step="1" value="100">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input type="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-12">
+        <div class="plot-container">
+          {{ plot_div|safe }}
+        </div>
+      </div>
+    </div>
+</div>
+  

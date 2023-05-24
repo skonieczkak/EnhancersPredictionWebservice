@@ -1,0 +1,16 @@
+<div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-tab-2">
+    <h1>About project</h1>
+    <p>
+      Our model for predicting whether a given DNA sequence is an enhancer or not was built based on neural networks.
+    </p>
+    <p>
+      The first step in training the network was data collection. From datasets containing information about the location of enhancers for a given chromosome and where they do not occur, we obtained positive and negative DNA sequences in FASTA format.
+    </p>
+    <p>
+      Next, each record from such a set had to be encoded in such a way that we could train the model. For each record, we counted the occurrences of a given k-mer, taking into account reverse complementarity. We assumed k as 5, which means that each 5-mer consisted of 5 DNA characters. We also assigned a label to the set indicating whether the sequence was an enhancer, 1 if it was and 0 otherwise.
+    </p>
+    <p>
+      Thanks to such encoding, we obtained a set on which we could train our network. To analyze our model, we divided the set into a training and a test set. We built many neural network models to test how changing hyperparameters such as the number of hidden layers and the number of neurons in individual layers affect the results. We chose the best model in terms of metrics on the test set as the model for our web service.
+    </p>
+</div>
+  
