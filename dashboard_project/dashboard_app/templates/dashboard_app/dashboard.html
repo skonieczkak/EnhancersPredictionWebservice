@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- include Bootstrap from a CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            {% include 'dashboard_app/components/sidebar.html' %}
+        </div>
+            <div class="main">
+                <img class="bottom-right-img" src="{% static 'images/DNA.png' %}" alt="Your image description">
+                <div class="tab-content" id="v-pills-tabContent">
+                    {% include 'dashboard_app/components/app.html' %}
+                    {% include 'dashboard_app/components/about_project.html' %}
+                    {% include 'dashboard_app/components/about_us.html' %}
+                    {% include 'dashboard_app/components/instructions.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+                        
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

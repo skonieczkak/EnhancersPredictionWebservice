@@ -1,0 +1,42 @@
+.sidebar {
+  background-color: #000; 
+  color: #fff; 
+  height: 100vh; 
+  width: 15%; 
+  position: fixed;
+}
+.main {
+  background-color: #fff; 
+  color: #000; 
+  margin-left: 17%; 
+  width: 60%;
+}
+.bottom-right-img {
+  position: fixed;
+  bottom: -3.5vw; 
+  right: -10vw; 
+  width: 30vw; 
+  height: 55vh;
+  z-index: 999; 
+}
+.download-button {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 868px) {
+  .sidebar {
+      width: 25%; /* Increase width to 50% */
+  }
+  .main {
+      margin-left: 27%; /* Adjust margin accordingly */
+      width: 68%;
+  }
+  .nav-link {
+      font-size: 14px; /* Decrease font size */
+  }
+  .download-button {
+      font-size: 14px;
+  }
+}
