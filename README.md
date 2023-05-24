@@ -18,10 +18,12 @@ Enhancers Prediction Web Service is a web application built with Django framewor
 
 2. Install the dependencies:
     
+    ```bash
     pip install -r requirements.txt
 
 3. Run the Django development server:
 
+    ```bash
     python manage.py runserver
 
 4. Open the web browser and navigate to http://localhost:8000 to access the web application.
