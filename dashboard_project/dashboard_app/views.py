@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.offline as opy
-from plotly.offline import plot
 import os
 import ast
 from django.http import HttpResponse
@@ -16,7 +14,7 @@ seq_number = 100
 def dashboard_view(request):
     selected_chr = request.POST.get('selected_chr')
     selected_chr_data = DATA.loc[DATA["name"] == selected_chr]
-    seq_number = 0  # Default value if no matching rows found
+    seq_number = 100  # Default value if no matching rows found
     if not selected_chr_data.empty:
         prediction = ast.literal_eval(selected_chr_data.iloc[0, 2])
         seq_number = len(prediction)
@@ -49,7 +47,6 @@ def handle_form_submission(request):
     else:
         # If not POST, redirect to the main view
         return redirect('dashboard_view')
-
 
 
 def download_data(request):
